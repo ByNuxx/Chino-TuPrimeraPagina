@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Pokémon</title>
+</head>
+<body>
+    <h1>Agregar Pokémon</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.nombre.label_tag }}: {{ form.nombre }}<br>
+        {{ form.tipo.label_tag }}: {{ form.tipo }}<br>
+        {{ form.region.label_tag }}: {{ form.region }}<br>
+        <button type="submit">Guardar</button>
+    </form>
+</body>
+</html>

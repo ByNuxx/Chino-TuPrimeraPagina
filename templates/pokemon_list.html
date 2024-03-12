@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Pokémon</title>
+</head>
+<body>
+    <h1>Lista de Pokémon</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Tipo</th>
+                <th>Región</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pokemon in pokemones %}
+            <tr>
+                <td>{{ pokemon.nombre }}</td>
+                <td>{{ pokemon.tipo }}</td>  <!-- Aquí se muestra el tipo -->
+                <td>{{ pokemon.region }}</td>
+                <td>
+                    <a href="{% url 'eliminar_pokemon' pokemon.id %}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
